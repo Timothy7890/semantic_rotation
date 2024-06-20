@@ -4,9 +4,10 @@
 
 ### 使用**Semantic_rotation**展示语义点云------------------------------------------
 
-![sliq_003](./D:/BaiduSyncdisk/img/sliq_003.gif)
-
-![Tomato_001](./D:/BaiduSyncdisk/img/Tomato_001.gif)
+<div align="center">
+  <img src="https://github.com/Timothy7890/semantic_rotation/assets/83215052/33819578-f87b-44cf-9362-6d6bf9a419d1" alt="sliq_003" width="330" height="186">
+  <img src="https://github.com/Timothy7890/semantic_rotation/assets/83215052/200239ac-4302-4db1-80e2-f79b2015a523" alt="Tomato_001" width="330" height="186">
+</div>
 
 对原始点云进行缩放重构，确保能够将点云放进open3d的视窗下
 
