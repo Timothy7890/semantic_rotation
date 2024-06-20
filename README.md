@@ -48,7 +48,7 @@ pip install . -e
 
 ```
 conda activate your_env
-gir clone https://github.com/Timothy7890/semantic_rotation.git
+git clone https://github.com/Timothy7890/semantic_rotation.git
 cd semantic_rotation
 pip install . -e
 ```
