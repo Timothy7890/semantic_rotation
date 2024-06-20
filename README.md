@@ -38,7 +38,7 @@ output_mp4_dir = rf"C:\Users\Administrator\Desktop\mp4\other_output"
 conda activate -n semantic_rotation python==3.8 -y
 pip install open3d==0.17.0
 pip install opencv-python==4.10.0.82
-git clone 
+git clone https://github.com/Timothy7890/semantic_rotation.git
 cd semantic_rotation
 pip install . -e
 ```
@@ -47,7 +47,7 @@ pip install . -e
 
 ```
 conda activate your_env
-gir clone 
+gir clone https://github.com/Timothy7890/semantic_rotation.git
 cd semantic_rotation
 pip install . -e
 ```
