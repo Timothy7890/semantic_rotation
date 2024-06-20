@@ -67,8 +67,6 @@ python Run_Sematic_R_cmd.py --input_dir "C:\Users\Administrator\Desktop\mp4\othe
 
 
 
-
-
 ## 输入点云要求：
 
 1. txt格式；
