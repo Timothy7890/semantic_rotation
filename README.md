@@ -55,6 +55,18 @@ pip install -e .
 
 
 
+## 运行
+
+### 命令行运行
+
+```
+python Run_Sematic_R_cmd.py --input_dir "C:\Users\Administrator\Desktop\mp4\other_input\input" --output_dir "C:\Users\Administrator\Desktop\mp4\other_input\combine_txt" --output_mp4_dir "C:\Users\Administrator\Desktop\mp4\other_output" --overwrite
+```
+
+
+
+
+
 
 
 ## 输入点云要求：
