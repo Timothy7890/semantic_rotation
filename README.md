@@ -41,7 +41,7 @@ pip install open3d==0.17.0
 pip install opencv-python==4.10.0.82
 git clone https://github.com/Timothy7890/semantic_rotation.git
 cd semantic_rotation
-pip install . -e
+pip install -e .
 ```
 
 ##### 从已有环境安装(需要注意open3d版本的关系，报错可以新建conda环境)
@@ -50,7 +50,7 @@ pip install . -e
 conda activate your_env
 git clone https://github.com/Timothy7890/semantic_rotation.git
 cd semantic_rotation
-pip install . -e
+pip install -e .
 ```
 
 
