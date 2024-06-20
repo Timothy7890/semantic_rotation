@@ -4,7 +4,9 @@
 
 ### 使用**Semantic_rotation**展示语义点云------------------------------------------
 
+![sliq_003](./D:/BaiduSyncdisk/img/sliq_003.gif)
 
+![Tomato_001](./D:/BaiduSyncdisk/img/Tomato_001.gif)
 
 对原始点云进行缩放重构，确保能够将点云放进open3d的视窗下
 
