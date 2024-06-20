@@ -59,8 +59,16 @@ pip install -e .
 
 ### 命令行运行
 
+举例1
+
 ```
-python Run_Sematic_R_cmd.py --input_dir "C:\Users\Administrator\Desktop\mp4\other_input\input" --output_dir "C:\Users\Administrator\Desktop\mp4\other_input\combine_txt" --output_mp4_dir "C:\Users\Administrator\Desktop\mp4\other_output" --overwrite
+python .\PipelineRun_Sematic_R_cmd.py --input_dir "C:\Users\Administrator\Desktop\mp4\other_input\input" --output_dir "C:\Users\Administrator\Desktop\mp4\other_input\combine_txt" --output_mp4_dir "C:\Users\Administrator\Desktop\mp4\other_output" --overwrite
+```
+
+举例2
+
+```
+python .\Pipeline\Run_Sematic_R_cmd.py --input_dir "E:\0_Code\python\semantic_rotation\data\input" --output_dir "E:\0_Code\python\semantic_rotation\data\combine_txt" --output_mp4_dir "E:\0_Code\python\semantic_rotation\data\output" --overwrite
 ```
 
 
