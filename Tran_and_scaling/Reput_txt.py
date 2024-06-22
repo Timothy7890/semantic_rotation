@@ -1,7 +1,7 @@
 import os
 import numpy as np
 
-def translate_and_scale_point_cloud(input_file, output_dir, overwrite=False):
+def translate_and_scale_point_cloud(input_file, output_dir, reput_size, overwrite=False):
     # 获取输入文件名（不包括扩展名）
     input_filename = os.path.splitext(os.path.basename(input_file))[0]
 
@@ -30,8 +30,8 @@ def translate_and_scale_point_cloud(input_file, output_dir, overwrite=False):
     y_range = max_y - min_y
 
     # 如果y的范围大于0.75,则缩放点云
-    if y_range > 1:
-        scale_factor = 1 / y_range
+    if y_range > reput_size:
+        scale_factor = reput_size / y_range
         xyz *= scale_factor
 
     # 计算y的平均值
