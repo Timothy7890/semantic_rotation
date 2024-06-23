@@ -12,8 +12,13 @@ def translate_and_scale_point_cloud(input_file, output_dir, reput_size, overwrit
         if os.path.exists(output_file):
             print(f"输出文件 {output_file} 已完成平移和旋转,无需重复执行")
             return
+
     # 读取点云文件的前7列数据
     point_cloud = np.genfromtxt(input_file, skip_header=1, usecols=range(7))
+
+    # 如果点云数据超过7列,只保留前7列
+    if point_cloud.shape[1] > 7:
+        point_cloud = point_cloud[:, :7]
 
     # 获取xyz坐标
     xyz = point_cloud[:, :3]
