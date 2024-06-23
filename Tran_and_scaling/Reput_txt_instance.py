@@ -1,7 +1,7 @@
 import os
 import numpy as np
 
-def translate_and_scale_point_cloud(input_file, output_dir, reput_size, overwrite=False):
+def translate_and_scale_point_cloud_instance(input_file, output_dir, reput_size, overwrite=False):
     # 获取输入文件名（不包括扩展名）
     input_filename = os.path.splitext(os.path.basename(input_file))[0]
 
@@ -12,8 +12,13 @@ def translate_and_scale_point_cloud(input_file, output_dir, reput_size, overwrit
         if os.path.exists(output_file):
             print(f"输出文件 {output_file} 已完成平移和旋转,无需重复执行")
             return
-    # 读取点云文件的前7列数据
-    point_cloud = np.genfromtxt(input_file, skip_header=1, usecols=range(7))
+    print("正在执行点云的平移和旋转等重构任务。")
+    # 读取点云文件的前8列数据
+    point_cloud = np.genfromtxt(input_file, skip_header=1, usecols=range(8))
+
+    # 如果点云数据超过8列,只保留前8列
+    if point_cloud.shape[1] > 8:
+        point_cloud = point_cloud[:, :8]
 
     # 获取xyz坐标
     xyz = point_cloud[:, :3]
@@ -38,12 +43,12 @@ def translate_and_scale_point_cloud(input_file, output_dir, reput_size, overwrit
     mean_y = np.mean(xyz[:, 1])
 
     # 平移y坐标,使其均值落在-0.1
-    xyz[:, 1] -= mean_y - (-0.1)
+    xyz[:, 1] -= mean_y
 
     # 更新点云数据的前3列
     point_cloud[:, :3] = xyz
 
-    # 保存处理后的7列点云数据到输出文件
+    # 保存处理后的8列点云数据到输出文件
     np.savetxt(output_file, point_cloud, fmt='%.6f')
 
     # 正方体边长
@@ -89,7 +94,7 @@ def translate_and_scale_point_cloud(input_file, output_dir, reput_size, overwrit
 
             # 设置为白色
             r = g = b = 255
-            cube_point_cloud.append([x, y, z, r, g, b, 2])
+            cube_point_cloud.append([x, y, z, r, g, b, -2, -2])
 
     # 将正方体点云数据转换为NumPy数组
     cube_point_cloud = np.array(cube_point_cloud)
@@ -107,7 +112,6 @@ def translate_and_scale_point_cloud(input_file, output_dir, reput_size, overwrit
     output_file = os.path.join(output_dir, f"{input_filename}.txt")
 
     # 保存结果到新的txt文件
-    header = 'x y z r g b object_id'
-    fmt = ['%.6f'] * 3 + ['%d'] * 4  # 设置保存格式
+    header = 'x y z r g b re in'
+    fmt = ['%.6f'] * 3 + ['%d'] * 5  # 设置保存格式
     np.savetxt(output_file, combined_point_cloud, fmt=fmt, delimiter=' ', header=header, comments='')
-

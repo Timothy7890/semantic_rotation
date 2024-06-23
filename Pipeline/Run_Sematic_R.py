@@ -2,7 +2,7 @@ import os
 from Tran_and_scaling.Reput_txt import translate_and_scale_point_cloud
 from Vedio.Semantic_vedio import generate_rotating_point_cloud_video_from_txt
 
-workspace = r"C:\Users\Administrator\Desktop\mp4\A-input"
+workspace = r"D:\004_Shidi\007_ZhaoYaqin\corn_project\data"
 # 使用示例
 input_txt_dir = os.path.join(workspace, "raw_txt")
 output_dir = os.path.join(workspace, "combine_txt")
